@@ -34,6 +34,10 @@
 #include "app_log.h"
 #include "sl_sensor_rht.h"
 #include "temperature.h"
+#include "gatt_db.h"
+#include "sl_bt_api.h"
+#include "sl_status.h"
+
 
 // The advertising set handle allocated from Bluetooth stack.
 static uint8_t advertising_set_handle = 0xff;
@@ -43,7 +47,8 @@ static uint8_t advertising_set_handle = 0xff;
  *****************************************************************************/
 SL_WEAK void app_init(void)
 {
-  app_log_info("%s\n", __FUNCTION__);
+ app_log_info("%s\n", __FUNCTION__); //renvoit le nom "app_init"
+ sl_sensor_rht_init();
 }
 
 /**************************************************************************//**
@@ -67,8 +72,33 @@ SL_WEAK void app_process_action(void)
 void sl_bt_on_event(sl_bt_msg_t *evt)
 {
   sl_status_t sc;
+  uint16_t temp_val;
+  uint16_t balablalablab;
 
   switch (SL_BT_MSG_ID(evt->header)) {
+    case sl_bt_evt_gatt_server_user_read_request_id : //Se reveille lors de la lecture de la température
+      if(evt->data.evt_gatt_server_user_read_request.characteristic == gattdb_temperature_1){
+          app_log_info("Display temperature.\n");
+          app_log_info("It's cold outside.\n ");
+
+          temp_val = read_temp();
+
+          if(sl_bt_gatt_server_send_user_read_response(evt->data.evt_gatt_server_user_read_request.connection,
+                                                       evt->data.evt_gatt_server_user_read_request.characteristic,
+                                                       0,
+                                                       sizeof(temp_val),
+                                                       (const uint8_t*)&temp_val,
+                                                       &balablalablab) == SL_STATUS_OK){
+              app_log_info("Temperature has been displayed.\n");
+              app_log_info("Sent value : %d.\n", temp_val);
+          }
+      }
+    break;
+
+    case sl_bt_evt_gatt_server_characteristic_status_id :
+      app_log_info("BOUH NOTIF LOL\n");
+      break;
+
     // -------------------------------
     // This event indicates the device has started and the radio is ready.
     // Do not call any stack command before receiving this boot event!
@@ -96,18 +126,19 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
       app_assert_status(sc);
       break;
 
-    // -------------------------------
-    // This event indicates that a new connection was opened.
+
+
     case sl_bt_evt_connection_opened_id:
-      sl_sensor_rht_init();
-      app_log_info("%s : connection opened \n", __FUNCTION__);
+      app_log_info("%s : I m in\n",  __FUNCTION__);           // On indique que l'on est DEDANS
+      temp_val = read_temp();
+      app_log_info("Temp value (BLE) = %d.\n", temp_val);
       break;
 
-    // -------------------------------
-    // This event indicates that a connection was closed.
     case sl_bt_evt_connection_closed_id:
-      sl_sensor_rht_deinit();
-      app_log_info("%s : connection closed \n", __FUNCTION__);
+      sl_sensor_rht_deinit() ; //désactivation du senseur
+      app_log_info("%s : I m out\n",  __FUNCTION__); // on indique que l'on est PLUS dedans
+
+      // -------------------------------
       // Generate data for advertising
       sc = sl_bt_legacy_advertiser_generate_data(advertising_set_handle,
                                                  sl_bt_advertiser_general_discoverable);

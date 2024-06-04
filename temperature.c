@@ -1,3 +1,9 @@
+/*
+ * temperature.c
+ *
+ *  Created on: 30 mai 2024
+ *      Author: barth
+ */
 #include "app_log.h"
 #include "temperature.h"
 #include "sl_sensor_rht.h"
@@ -24,5 +30,3 @@ int16_t read_temp(void){
 
   return ble_temp;
 }
-
-

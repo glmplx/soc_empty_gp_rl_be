@@ -1,10 +1,14 @@
-#ifndef SL_SENSOR_RHT_H
-#define SL_SENSOR_RHT_H
-
-/***********************************************************************************************//**
- * @addtogroup sensor_rht
- * @{
- **************************************************************************************************/
-
+/*
+ * temperature.h
+ *
+ *  Created on: 30 mai 2024
+ *      Author: barth
+ */
 #include <stdint.h>
-#include "sl_status.h"
+
+#ifndef TEMPERATURE_H_
+#define TEMPERATURE_H_
+
+int16_t read_temp(void);
+
+#endif /* TEMPERATURE_H_ */
