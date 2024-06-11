@@ -669,21 +669,6 @@
 			<locationURI>STUDIO_SDK_LOC/protocol/bluetooth/src/sli_bt_sync_config.c</locationURI>
 		</link>
 		<link>
-			<name>gecko_sdk_4.4.2/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.4.2/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h</locationURI>
-		</link>
-		<link>
-			<name>gecko_sdk_4.4.2/app/bluetooth/common/gatt_service_aio/sli_gatt_service_aio.h</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/app/bluetooth/common/gatt_service_aio/sli_gatt_service_aio.h</locationURI>
-		</link>
-		<link>
 			<name>gecko_sdk_4.4.2/app/bluetooth/common/gatt_service_device_information/sl_gatt_service_device_information.h</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/app/bluetooth/common/gatt_service_device_information/sl_gatt_service_device_information.h</locationURI>
@@ -847,6 +832,26 @@
 			<name>gecko_sdk_4.4.2/platform/driver/i2cspm/src/sl_i2cspm.c</name>
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/driver/i2cspm/src/sl_i2cspm.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.4.2/platform/driver/leddrv/inc/sl_led.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/driver/leddrv/inc/sl_led.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.4.2/platform/driver/leddrv/inc/sl_simple_led.h</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/driver/leddrv/inc/sl_simple_led.h</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.4.2/platform/driver/leddrv/src/sl_led.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/driver/leddrv/src/sl_led.c</locationURI>
+		</link>
+		<link>
+			<name>gecko_sdk_4.4.2/platform/driver/leddrv/src/sl_simple_led.c</name>
+			<type>1</type>
+			<locationURI>STUDIO_SDK_LOC/platform/driver/leddrv/src/sl_simple_led.c</locationURI>
 		</link>
 		<link>
 			<name>gecko_sdk_4.4.2/platform/emdrv/common/inc/ecode.h</name>

@@ -42,7 +42,6 @@ component:
 - {id: bt_post_build}
 - {id: component_catalog}
 - {id: gatt_configuration}
-- {id: gatt_service_aio}
 - {id: gatt_service_device_information}
 - {id: in_place_ota_dfu}
 - instance: [vcom]
@@ -50,6 +49,8 @@ component:
 - {id: mpu}
 - {id: rail_util_pti}
 - {id: sensor_rht}
+- instance: [led0]
+  id: simple_led
 other_file:
 - {path: image/readme_img0.png}
 - {path: image/readme_img1.png}

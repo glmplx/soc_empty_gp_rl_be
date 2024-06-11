@@ -120,7 +120,6 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bgapi.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bt_api_compatibility.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\debug\inc\sl_debug_swo.h \
- c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_aio\sl_gatt_service_aio.h \
  ../autogen/sl_i2cspm_instances.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\i2cspm\inc\sl_i2cspm.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\emlib\inc\em_gpio.h \
@@ -129,6 +128,9 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  ../autogen/sl_iostream_init_usart_instances.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\security\sl_component\sl_mbedtls_support\inc\sl_mbedtls.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\service\mpu\inc\sl_mpu.h \
+ ../autogen/sl_simple_led_instances.h \
+ c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\leddrv\inc\sl_simple_led.h \
+ c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\leddrv\inc\sl_led.h \
  ../autogen/sl_iostream_init_instances.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\hardware\driver\configuration_over_swo\inc\sl_cos.h
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\common\toolchain\inc\sl_gcc_preinclude.h:
@@ -252,7 +254,6 @@ c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bt_ap
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bgapi.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bt_api_compatibility.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\debug\inc\sl_debug_swo.h:
-c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_aio\sl_gatt_service_aio.h:
 ../autogen/sl_i2cspm_instances.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\i2cspm\inc\sl_i2cspm.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\emlib\inc\em_gpio.h:
@@ -261,5 +262,8 @@ c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\service\iostream\inc\s
 ../autogen/sl_iostream_init_usart_instances.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\security\sl_component\sl_mbedtls_support\inc\sl_mbedtls.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\service\mpu\inc\sl_mpu.h:
+../autogen/sl_simple_led_instances.h:
+c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\leddrv\inc\sl_simple_led.h:
+c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\leddrv\inc\sl_led.h:
 ../autogen/sl_iostream_init_instances.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\hardware\driver\configuration_over_swo\inc\sl_cos.h:

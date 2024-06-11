@@ -142,6 +142,16 @@
             <file name="sl_i2cspm.h" uri="studio:/sdk/platform/driver/i2cspm/inc/sl_i2cspm.h"/>
           </folder>
         </folder>
+        <folder name="leddrv">
+          <folder name="src">
+            <file name="sl_led.c" uri="studio:/sdk/platform/driver/leddrv/src/sl_led.c"/>
+            <file name="sl_simple_led.c" uri="studio:/sdk/platform/driver/leddrv/src/sl_simple_led.c"/>
+          </folder>
+          <folder name="inc">
+            <file name="sl_led.h" uri="studio:/sdk/platform/driver/leddrv/inc/sl_led.h"/>
+            <file name="sl_simple_led.h" uri="studio:/sdk/platform/driver/leddrv/inc/sl_simple_led.h"/>
+          </folder>
+        </folder>
       </folder>
       <folder name="service">
         <folder name="device_init">
@@ -461,11 +471,6 @@
       </folder>
       <folder name="bluetooth">
         <folder name="common">
-          <folder name="gatt_service_aio">
-            <file name="sl_gatt_service_aio.c" uri="studio:/sdk/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c"/>
-            <file name="sl_gatt_service_aio.h" uri="studio:/sdk/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h"/>
-            <file name="sli_gatt_service_aio.h" uri="studio:/sdk/app/bluetooth/common/gatt_service_aio/sli_gatt_service_aio.h"/>
-          </folder>
           <folder name="gatt_service_device_information">
             <file name="sl_gatt_service_device_information.h" uri="studio:/sdk/app/bluetooth/common/gatt_service_device_information/sl_gatt_service_device_information.h"/>
           </folder>
@@ -801,11 +806,11 @@
   <includePath uri="studio:/sdk/platform/emdrv/dmadrv/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/common/inc"/>
   <includePath uri="studio:/sdk/platform/emlib/inc"/>
-  <includePath uri="studio:/sdk/app/bluetooth/common/gatt_service_aio"/>
   <includePath uri="studio:/sdk/app/bluetooth/common/gatt_service_device_information"/>
   <includePath uri="studio:/sdk/platform/driver/i2cspm/inc"/>
   <includePath uri="studio:/sdk/app/bluetooth/common/in_place_ota_dfu"/>
   <includePath uri="studio:/sdk/platform/service/iostream/inc"/>
+  <includePath uri="studio:/sdk/platform/driver/leddrv/inc"/>
   <includePath uri="studio:/sdk/platform/security/sl_component/sl_mbedtls_support/config"/>
   <includePath uri="studio:/sdk/platform/security/sl_component/sl_mbedtls_support/config/preset"/>
   <includePath uri="studio:/sdk/platform/security/sl_component/sl_mbedtls_support/inc"/>

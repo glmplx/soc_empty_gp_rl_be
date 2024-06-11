@@ -37,6 +37,7 @@
 #include "gatt_db.h"
 #include "sl_bt_api.h"
 #include "sl_status.h"
+#include "sl_simple_led_instances.h"
 
 #define TEMPERATURE_TIMER_SIGNAL (1<<0)
 
@@ -53,6 +54,7 @@ SL_WEAK void app_init(void)
 {
  app_log_info("%s\n", __FUNCTION__); //renvoit le nom "app_init"
  sl_sensor_rht_init();
+ sl_simple_led_init_instances();
 }
 
 void timer_callback(sl_sleeptimer_timer_handle_t *handle, void *data){
@@ -89,8 +91,6 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
   static sl_sleeptimer_timer_handle_t timer_handle;
 
-  uint8array lavaleur;
-
   switch (SL_BT_MSG_ID(evt->header)) {
     case sl_bt_evt_gatt_server_user_read_request_id : //Se reveille lors de la lecture de la température
       if(evt->data.evt_gatt_server_user_read_request.characteristic == gattdb_temperature){
@@ -125,11 +125,17 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
       break;
 
-    case sl_bt_evt_gatt_server_user_write_request_id :
-          app_log_info("Demande d'acces en ecriture \n");
-          memcpy(lavaleur.data, evt->data.evt_gatt_server_user_write_request.value.data, evt->data.evt_gatt_server_user_write_request.value.len);
-              break;
-        break;
+      case sl_bt_evt_gatt_server_user_write_request_id :
+            app_log_info("Demande d'acces en ecriture  %d \n", evt->data.evt_gatt_server_user_write_request.value.data[0]);
+            if(evt->data.evt_gatt_server_user_write_request.value.data[0] == 1){
+                sl_led_led0.turn_on(sl_led_led0.context);
+            }
+            else if(evt->data.evt_gatt_server_user_write_request.value.data[0] == 0){
+                sl_led_led0.turn_off(sl_led_led0.context);
+
+            }
+
+          break;
 
     // -------------------------------
     // This event indicates the device has started and the radio is ready.

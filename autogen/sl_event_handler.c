@@ -18,12 +18,12 @@
 #include "app_timer.h"
 #include "sl_bluetooth.h"
 #include "sl_debug_swo.h"
-#include "sl_gatt_service_aio.h"
 #include "sl_i2cspm_instances.h"
 #include "sl_iostream_stdlib_config.h"
 #include "sl_iostream_init_usart_instances.h"
 #include "sl_mbedtls.h"
 #include "sl_mpu.h"
+#include "sl_simple_led_instances.h"
 #include "sl_iostream_init_instances.h"
 #include "sl_power_manager.h"
 #include "sl_cos.h"
@@ -47,6 +47,7 @@ void sl_driver_init(void)
 {
   sl_debug_swo_init();
   sl_i2cspm_init_instances();
+  sl_simple_led_init_instances();
   sl_cos_send_config();
 }
 
@@ -89,7 +90,6 @@ void sl_stack_process_action(void)
 
 void sl_internal_app_process_action(void)
 {
-  sl_gatt_service_aio_step();
 }
 
 void sl_iostream_init_instances(void)

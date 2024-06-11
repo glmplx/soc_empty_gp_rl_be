@@ -26,7 +26,6 @@ autogen/sl_bluetooth.o: ../autogen/sl_bluetooth.c \
  ../autogen/sl_component_catalog.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\in_place_ota_dfu\sl_bt_in_place_ota_dfu.h \
  C:\Users\guill\SimplicityStudio\v5_workspace\soc_empty_gp_rl_be\config/sl_bt_in_place_ota_dfu_config.h \
- c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_aio\sl_gatt_service_aio.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_device_information\sl_gatt_service_device_information.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\device\siliconlabs\efr32mg12p\include\em_device.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\device\siliconlabs\efr32mg12p\include\efr32mg12p332f1024gl125.h \
@@ -108,7 +107,6 @@ c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bt_st
 ../autogen/sl_component_catalog.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\in_place_ota_dfu\sl_bt_in_place_ota_dfu.h:
 C:\Users\guill\SimplicityStudio\v5_workspace\soc_empty_gp_rl_be\config/sl_bt_in_place_ota_dfu_config.h:
-c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_aio\sl_gatt_service_aio.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_device_information\sl_gatt_service_device_information.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\device\siliconlabs\efr32mg12p\include\em_device.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\device\siliconlabs\efr32mg12p\include\efr32mg12p332f1024gl125.h:

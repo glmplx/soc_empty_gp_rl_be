@@ -18,7 +18,6 @@ C_DEPS :=
 SUBDIRS := \
 . \
 autogen \
-gecko_sdk_4.4.2/app/bluetooth/common/gatt_service_aio \
 gecko_sdk_4.4.2/app/bluetooth/common/in_place_ota_dfu \
 gecko_sdk_4.4.2/app/bluetooth/common/sensor_rht \
 gecko_sdk_4.4.2/app/bluetooth/common/sensor_select \
@@ -35,6 +34,7 @@ gecko_sdk_4.4.2/platform/common/src \
 gecko_sdk_4.4.2/platform/common/toolchain/src \
 gecko_sdk_4.4.2/platform/driver/debug/src \
 gecko_sdk_4.4.2/platform/driver/i2cspm/src \
+gecko_sdk_4.4.2/platform/driver/leddrv/src \
 gecko_sdk_4.4.2/platform/emdrv/dmadrv/src \
 gecko_sdk_4.4.2/platform/emlib/src \
 gecko_sdk_4.4.2/platform/radio/rail_lib/plugin/pa-conversions \
