@@ -53,6 +53,11 @@ SL_WEAK void app_init(void)
  sl_sensor_rht_init();
 }
 
+void timer_callback(sl_sleeptimer_timer_handle_t *handle, void *data){
+  (void)handle;
+  (void)data;
+}
+
 /**************************************************************************//**
  * Application Process Action.
  *****************************************************************************/
@@ -76,7 +81,8 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
   sl_status_t sc;
   uint16_t temp_val;
   uint16_t balablalablab;
-  uint16_t timer_steps;
+
+  static sl_sleeptimer_timer_handle_t timer_handle;
 
   switch (SL_BT_MSG_ID(evt->header)) {
     case sl_bt_evt_gatt_server_user_read_request_id : //Se reveille lors de la lecture de la température
@@ -103,10 +109,9 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
             if(evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_temperature){ // verification de l'origne temp
                 if(evt->data.evt_gatt_server_characteristic_status.client_config == 1){ //appuie du bouton notify
                     app_log_info("Notification de Temperature DEPUIS UN BOUTON\n");
-                    sl_status_t sl_sleeptimer_start_periodic_timer_ms(&timer_handle, 1000, timer_callback, NULL, 1,0);
+                    sl_sleeptimer_start_periodic_timer_ms(&timer_handle, 1000, timer_callback, NULL, 1,0);
                 } else {
-                    sl_status_t sl_sleeptimer_stop_timer(&timer_handle);
-                    timer_steps = 1;
+                    sl_sleeptimer_stop_timer(&timer_handle);
                 }
             }
 
@@ -174,8 +179,4 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
   }
 }
 
-void timer_callback(sl_sleeptimer_timer_handle_t *handle, void *data){
-  (void)handle;
-  (void)data;
-  timer_steps++;
-}
+
