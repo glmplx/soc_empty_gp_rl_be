@@ -44,6 +44,8 @@
 // The advertising set handle allocated from Bluetooth stack.
 static uint8_t advertising_set_handle = 0xff;
 
+int step = 0;
+
 /**************************************************************************//**
  * Application Init.
  *****************************************************************************/
@@ -56,6 +58,9 @@ SL_WEAK void app_init(void)
 void timer_callback(sl_sleeptimer_timer_handle_t *handle, void *data){
   (void)handle;
   (void)data;
+  app_log_info("Time step %d\n",step);
+  step++;
+  sl_bt_external_signal(TEMPERATURE_TIMER_SIGNAL);
 }
 
 /**************************************************************************//**
@@ -107,9 +112,10 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     case sl_bt_evt_gatt_server_characteristic_status_id :
             app_log_info("co = %d\n",evt->data.evt_gatt_server_characteristic_status.characteristic);
             if(evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_temperature){ // verification de l'origne temp
-                if(evt->data.evt_gatt_server_characteristic_status.client_config == 1){ //appuie du bouton notify
+                if(evt->data.evt_gatt_server_characteristic_status.client_config_flags == 1){ //appuie du bouton notify
                     app_log_info("Notification de Temperature DEPUIS UN BOUTON\n");
                     sl_sleeptimer_start_periodic_timer_ms(&timer_handle, 1000, timer_callback, NULL, 1,0);
+                    step = 1;
                 } else {
                     sl_sleeptimer_stop_timer(&timer_handle);
                 }
@@ -144,6 +150,15 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
       app_assert_status(sc);
       break;
 
+    case sl_bt_evt_system_external_signal_id:
+      if(evt->data.evt_system_external_signal.extsignals==TEMPERATURE_TIMER_SIGNAL){
+          app_log_info("même signal\n");
+          sl_bt_gatt_server_send_notification(evt->data.evt_gatt_server_user_read_request.connection,
+                                              evt->data.evt_gatt_server_user_read_request.characteristic,
+                                              sizeof(temp_val),
+                                              (const uint8_t*)&temp_val);
+      }
+      break;
 
 
     case sl_bt_evt_connection_opened_id:
