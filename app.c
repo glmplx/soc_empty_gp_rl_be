@@ -89,6 +89,8 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
   static sl_sleeptimer_timer_handle_t timer_handle;
 
+  uint8array lavaleur;
+
   switch (SL_BT_MSG_ID(evt->header)) {
     case sl_bt_evt_gatt_server_user_read_request_id : //Se reveille lors de la lecture de la température
       if(evt->data.evt_gatt_server_user_read_request.characteristic == gattdb_temperature){
@@ -125,6 +127,8 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
     case sl_bt_evt_gatt_server_user_write_request_id :
           app_log_info("Demande d'acces en ecriture \n");
+          memcpy(lavaleur.data, evt->data.evt_gatt_server_user_write_request.value.data, evt->data.evt_gatt_server_user_write_request.value.len);
+              break;
         break;
 
     // -------------------------------
