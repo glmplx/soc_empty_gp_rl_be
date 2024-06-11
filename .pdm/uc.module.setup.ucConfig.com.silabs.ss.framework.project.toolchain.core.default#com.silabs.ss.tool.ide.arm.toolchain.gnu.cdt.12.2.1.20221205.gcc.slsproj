@@ -4,6 +4,7 @@
     <folder name="btconf">
       <file name="in_place_ota_dfu.xml" generated="true" linked="false"/>
       <file name="gatt_configuration.btconf" generated="true" linked="false"/>
+      <file name="gatt_service_aio.xml" generated="true" linked="false"/>
     </folder>
     <file name="sl_memory_config.h" generated="true" linked="false"/>
     <file name="sl_mx25_flash_shutdown_usart_config.h" generated="true" linked="false"/>

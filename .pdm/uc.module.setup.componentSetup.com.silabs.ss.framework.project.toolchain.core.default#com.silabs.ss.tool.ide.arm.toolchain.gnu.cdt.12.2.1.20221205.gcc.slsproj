@@ -461,6 +461,11 @@
       </folder>
       <folder name="bluetooth">
         <folder name="common">
+          <folder name="gatt_service_aio">
+            <file name="sl_gatt_service_aio.c" uri="studio:/sdk/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.c"/>
+            <file name="sl_gatt_service_aio.h" uri="studio:/sdk/app/bluetooth/common/gatt_service_aio/sl_gatt_service_aio.h"/>
+            <file name="sli_gatt_service_aio.h" uri="studio:/sdk/app/bluetooth/common/gatt_service_aio/sli_gatt_service_aio.h"/>
+          </folder>
           <folder name="gatt_service_device_information">
             <file name="sl_gatt_service_device_information.h" uri="studio:/sdk/app/bluetooth/common/gatt_service_device_information/sl_gatt_service_device_information.h"/>
           </folder>
@@ -796,6 +801,7 @@
   <includePath uri="studio:/sdk/platform/emdrv/dmadrv/inc"/>
   <includePath uri="studio:/sdk/platform/emdrv/common/inc"/>
   <includePath uri="studio:/sdk/platform/emlib/inc"/>
+  <includePath uri="studio:/sdk/app/bluetooth/common/gatt_service_aio"/>
   <includePath uri="studio:/sdk/app/bluetooth/common/gatt_service_device_information"/>
   <includePath uri="studio:/sdk/platform/driver/i2cspm/inc"/>
   <includePath uri="studio:/sdk/app/bluetooth/common/in_place_ota_dfu"/>

@@ -123,6 +123,10 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
 
       break;
 
+    case sl_bt_evt_gatt_server_user_write_request_id :
+          app_log_info("Demande d'acces en ecriture \n");
+        break;
+
     // -------------------------------
     // This event indicates the device has started and the radio is ready.
     // Do not call any stack command before receiving this boot event!
@@ -153,8 +157,12 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     case sl_bt_evt_system_external_signal_id:
       if(evt->data.evt_system_external_signal.extsignals==TEMPERATURE_TIMER_SIGNAL){
           app_log_info("même signal\n");
-          sl_bt_gatt_server_send_notification(evt->data.evt_gatt_server_user_read_request.connection,
-                                              evt->data.evt_gatt_server_user_read_request.characteristic,
+
+          temp_val = read_temp();
+          app_log_info("Temp value (BLE) = %d.\n", temp_val);
+
+          sl_bt_gatt_server_send_notification(evt->data.handle,
+                                              gattdb_temperature,
                                               sizeof(temp_val),
                                               (const uint8_t*)&temp_val);
       }

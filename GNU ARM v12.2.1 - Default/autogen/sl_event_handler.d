@@ -120,6 +120,7 @@ autogen/sl_event_handler.o: ../autogen/sl_event_handler.c \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bgapi.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bt_api_compatibility.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\debug\inc\sl_debug_swo.h \
+ c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_aio\sl_gatt_service_aio.h \
  ../autogen/sl_i2cspm_instances.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\i2cspm\inc\sl_i2cspm.h \
  c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\emlib\inc\em_gpio.h \
@@ -251,6 +252,7 @@ c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bt_ap
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bgapi.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\protocol\bluetooth\inc\sl_bt_api_compatibility.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\debug\inc\sl_debug_swo.h:
+c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\app\bluetooth\common\gatt_service_aio\sl_gatt_service_aio.h:
 ../autogen/sl_i2cspm_instances.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\driver\i2cspm\inc\sl_i2cspm.h:
 c:\users\guill\simplicitystudio\sdks\gecko_sdk_2\platform\emlib\inc\em_gpio.h:

@@ -18,6 +18,7 @@ C_DEPS :=
 SUBDIRS := \
 . \
 autogen \
+gecko_sdk_4.4.2/app/bluetooth/common/gatt_service_aio \
 gecko_sdk_4.4.2/app/bluetooth/common/in_place_ota_dfu \
 gecko_sdk_4.4.2/app/bluetooth/common/sensor_rht \
 gecko_sdk_4.4.2/app/bluetooth/common/sensor_select \
