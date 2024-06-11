@@ -38,6 +38,8 @@
 #include "sl_bt_api.h"
 #include "sl_status.h"
 
+#define TEMPERATURE_TIMER_SIGNAL (1<<0)
+
 
 // The advertising set handle allocated from Bluetooth stack.
 static uint8_t advertising_set_handle = 0xff;
@@ -74,10 +76,11 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
   sl_status_t sc;
   uint16_t temp_val;
   uint16_t balablalablab;
+  uint16_t timer_steps;
 
   switch (SL_BT_MSG_ID(evt->header)) {
     case sl_bt_evt_gatt_server_user_read_request_id : //Se reveille lors de la lecture de la température
-      if(evt->data.evt_gatt_server_user_read_request.characteristic == gattdb_temperature_1){
+      if(evt->data.evt_gatt_server_user_read_request.characteristic == gattdb_temperature){
           app_log_info("Display temperature.\n");
           app_log_info("It's cold outside.\n ");
 
@@ -96,7 +99,17 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     break;
 
     case sl_bt_evt_gatt_server_characteristic_status_id :
-      app_log_info("BOUH NOTIF LOL\n");
+            app_log_info("co = %d\n",evt->data.evt_gatt_server_characteristic_status.characteristic);
+            if(evt->data.evt_gatt_server_characteristic_status.characteristic == gattdb_temperature){ // verification de l'origne temp
+                if(evt->data.evt_gatt_server_characteristic_status.client_config == 1){ //appuie du bouton notify
+                    app_log_info("Notification de Temperature DEPUIS UN BOUTON\n");
+                    sl_status_t sl_sleeptimer_start_periodic_timer_ms(&timer_handle, 1000, timer_callback, NULL, 1,0);
+                } else {
+                    sl_status_t sl_sleeptimer_stop_timer(&timer_handle);
+                    timer_steps = 1;
+                }
+            }
+
       break;
 
     // -------------------------------
@@ -159,4 +172,10 @@ void sl_bt_on_event(sl_bt_msg_t *evt)
     default:
       break;
   }
+}
+
+void timer_callback(sl_sleeptimer_timer_handle_t *handle, void *data){
+  (void)handle;
+  (void)data;
+  timer_steps++;
 }
